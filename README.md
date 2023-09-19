@@ -45,6 +45,8 @@ In `Model Training.ipynb`, you'll find the detailed process of training the diam
 
 The Diamond Price Prediction project includes a web application that allows users to interact with the trained model. The application is implemented in Python using Flask and incorporates machine learning pipelines for real-time predictions.
 
+![web page](artifacts/web.jpeg)
+
 ### Source Code
 
 - `src/` contains the source code for the web application.
