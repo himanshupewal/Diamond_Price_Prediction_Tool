@@ -1,5 +1,5 @@
 # Diamond Price Prediction
-![Diamond](https://imgur.com/a/ifbwhvS)
+![Diamond](artifacts/close-up-of-diamonds.jpg)
 
 Welcome to the Diamond Price Prediction project. This project focuses on predicting diamond prices based on a dataset of gemstone characteristics. Accurate diamond price predictions can be invaluable for both buyers and sellers in the jewelry market. This project utilizes machine learning techniques to develop a predictive model and provides a web application for users to make price predictions.
 
