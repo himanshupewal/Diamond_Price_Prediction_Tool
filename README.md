@@ -26,6 +26,33 @@ This project utilizes several datasets related to gemstone characteristics:
 - `test.csv`: A dataset designed for testing the trained prediction model. Users can input gemstone features, and the model will provide price predictions.
 
 - `train.csv`: This dataset is used for training the machine learning model. It contains a subset of the gemstone data with corresponding price labels.
+- 
+## Dataset Information
+
+This dataset contains information about diamonds, including their price, weight, cut quality, color, clarity, and physical dimensions. Here's a breakdown of the dataset columns:
+
+- **price**: Price of the diamond in US dollars ($326 - $18,823).
+
+- **carat**: Weight of the diamond in carats (0.2 - 5.01).
+
+- **cut**: Quality of the cut (Fair, Good, Very Good, Premium, Ideal).
+
+- **color**: Diamond color, rated from J (worst) to D (best).
+
+- **clarity**: Measurement of how clear the diamond is (I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best)).
+
+- **x**: Length of the diamond in millimeters (0 - 10.74).
+
+- **y**: Width of the diamond in millimeters (0 - 58.9).
+
+- **z**: Depth of the diamond in millimeters (0 - 31.8).
+
+- **depth**: Total depth percentage, calculated as z / mean(x, y) or 2 * z / (x + y) (43 - 79).
+
+- **table**: Width of the top of the diamond relative to its widest point (43 - 95).
+
+![Daimond algo](artifacts/Anglo-DiamondAnatomy_03.jpg)
+
 
 ## Exploratory Data Analysis (EDA)
 
