@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,20 +18,20 @@
             background-color: #dfe9e9;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            width: 50%; /* Make the container span horizontally */
+            width: 50%;
             margin: 30px auto;
             padding: 20px;
         }
 
         h2 {
-            text-align:center;
+            text-align: center;
             color: #091420;
             font-size: 34px;
             margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 10px; /* Make form groups smaller */
+            margin-bottom: 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
@@ -41,12 +42,12 @@
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
-            width: 30%; /* Adjust the label width */
+            width: 30%;
         }
 
         input[type="text"],
         select {
-            width: 65%; /* Adjust the input/select width */
+            width: 65%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -65,16 +66,16 @@
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
-            border: 2px solid #007bff; /* Add a border around the button */
-            padding: 10px; /* Add padding inside the button */
-            border-radius: 5px; /* Round the corners of the button */
+            border: 2px solid #007bff;
+            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            display: block; /* Display as a block element */
-            margin-top: 20px; /* Add space above the button to match the result box */
-            text-align: center; /* Center the text inside the button */
+            display: block;
+            margin-top: 20px;
+            text-align: center;
             font-weight: bold;
-            width: 100%; /* Make the button span the entire width of the form */
+            width: 100%;
         }
 
         input[type="submit"]:hover {
@@ -82,13 +83,13 @@
         }
 
         .result {
-            text-align: center; /* Center the text */
-            margin-top: 20px; /* Add space above the result */
+            text-align: center;
+            margin-top: 20px;
             font-weight: bold;
             color: #007bff;
-            border: 2px solid #007bff; /* Add a border around the result */
-            padding: 10px; /* Add padding inside the border */
-            border-radius: 5px; /* Round the corners of the border */
+            border: 2px solid #007bff;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -98,14 +99,16 @@
         <form action="{{url_for('predict_datapoint')}}" method="POST">
             <div class="form-group">
                 <label for="carat">Carat:</label>
-                <input type="text" id="carat" name="carat" placeholder="Carat (float)">
+                <input type="text" id="carat" name="carat" placeholder="Carat (float)" onkeydown="moveNext(event)">
             </div>
 
             <div class="form-group">
                 <label for="depth">Depth:</label>
-                <input type="text" id="depth" name="depth" placeholder="Depth (float)">
+                <input type="text" id="depth" name="depth" placeholder="Depth (float)" onkeydown="moveNext(event)">
             </div>
 
+            <!-- Add similar code for other input and select fields -->
+            
             <div class="form-group">
                 <label for="table">Table:</label>
                 <input type="text" id="table" name="table" placeholder="Table (float)">
@@ -165,11 +168,25 @@
             </div>
 
             <input type="submit" value="Submit">
+
         </form>
 
         <div class="result">
             Predicted Price: {{final_result}}
         </div>
     </div>
+
+    <script>
+        function moveNext(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                const inputs = Array.from(document.querySelectorAll('input, select'));
+                const currentIndex = inputs.indexOf(e.target);
+                if (currentIndex < inputs.length - 1) {
+                    inputs[currentIndex + 1].focus();
+                }
+            }
+        }
+    </script>
 </body>
 </html>
