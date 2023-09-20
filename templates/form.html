@@ -177,16 +177,19 @@
     </div>
 
     <script>
-        function moveNext(e) {
-            if (e.keyCode === 13) {
-                e.preventDefault();
-                const inputs = Array.from(document.querySelectorAll('input, select'));
-                const currentIndex = inputs.indexOf(e.target);
-                if (currentIndex < inputs.length - 1) {
-                    inputs[currentIndex + 1].focus();
-                }
-            }
+        function moveNext(e, nextInputId) {
+              if (e.keyCode === 13) {
+                    e.preventDefault();
+                    const nextInput = document.getElementById(nextInputId);
+                    if (nextInput) {
+
+                        nextInput.focus();
+              
+            
         }
+    }
+}
+
     </script>
 </body>
 </html>
